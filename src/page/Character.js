@@ -19,7 +19,7 @@ const Character = () => {
           }
       }
       http()
-  },)
+  }, [])
 
   return (
     <div className='complete-card'>
