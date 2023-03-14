@@ -25,7 +25,7 @@ function App() {
           <Route path='/location' element={<Locations />} />
           <Route path='/episode' element={<Episodes />} />
           <Route path='/search/:search' element={<Search />} />
-          <Route path='/notfound' element={<NotFound />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
