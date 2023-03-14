@@ -5,7 +5,7 @@ const CardEpisode = ({episode}) => {
     <div>
         <h3>{episode.name}</h3>
         <p>{episode.episode}</p>
-        <p>Released: {episode.air_date}</p>
+        <p>Released: {episode.released}</p>
         <p>Created: {episode.created}</p>
     </div>
   )
