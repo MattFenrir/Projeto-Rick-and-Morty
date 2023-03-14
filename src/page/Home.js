@@ -27,7 +27,7 @@ const Home = () => {
 }, [])
 
 return (
-  <div className='main-div'>
+  <div className='div-home'>
     <h2>Characters</h2>
     <div className='characters-home'>
         {
@@ -36,18 +36,16 @@ return (
             ))
         }
     </div>
-
     <h2>Locations</h2>
-    <div className='location-home'>
+    <div className='locations-home'>
         {
           location.map((item) => (
             <CardLocation key={item.id} location={item}  />
           ))
         }   
     </div>
-
     <h2>Episodes</h2>
-    <div className='episode-home'>
+    <div className='episodes-home'>
         {
           episode.map((item) => (
             <CardEpisode key={item.id} episode={item} />
