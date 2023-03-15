@@ -9,51 +9,71 @@ const Home = () => {
   const [location, setLocation] = useState([])
   const [episode, setEpisode] = useState([])
 
-  useEffect(() => {
-    const http = async () => {
-        try{
-            const response = await fetch(url)
-            const data = await response.json()
-            console.log(data)
-          setCharacter({...data})
-          setLocation({...data})
-          setEpisode({...data})
 
-        }catch(error){ 
-            console.log('Error: ' + error.message)
-        }
+
+  function generateRandom(max){
+    const min = 1
+    let randomNumbers = []
+    while(randomNumbers.length < 3){
+      const randomNum = Math.floor(Math.random() * (max - min) + min)
+      
+      if(!randomNumbers.includes(randomNum))
+        randomNumbers.push(randomNum)
     }
-    http()
-}, [])
+    return randomNumbers.sort()
+  }
+  
 
-return (
-  <div className='div-home'>
-    <h2>Characters</h2>
-    <div className='characters-home'>
+  useEffect(() => {
+    const request = async () => {
+      setCharacter(await httpRequest(`${url}/character/${generateRandom(826).toString()}`))
+      setLocation(await httpRequest(`${url}/location/${generateRandom(126).toString()}`))
+      setEpisode(await httpRequest(`${url}/episode/${generateRandom(51).toString()}`))
+    }
+    request()
+  }, [])
+
+  const httpRequest = async (url) => {
+    try{
+      const response = await fetch(url)
+      const data = await response.json()
+      return data
+    }catch(error){
+      console.log('Error: ' + error.message)
+  }
+}
+
+  return (
+    <main>
+      <div>
+        <h1>Characters</h1>
+      </div>
+      <section className='character-home'>
         {
           character.map((item) => (
             <CardCharacter key={item.id} character={item} />                        
             ))
         }
-    </div>
-    <h2>Locations</h2>
-    <div className='locations-home'>
-        {
-          location.map((item) => (
-            <CardLocation key={item.id} location={item}  />
-          ))
-        }   
-    </div>
-    <h2>Episodes</h2>
-    <div className='episodes-home'>
-        {
-          episode.map((item) => (
-            <CardEpisode key={item.id} episode={item} />
-          ))
-        }   
-    </div>s
-</div>
-)
+      </section>
+      <h1>Locations</h1>
+        <div className='location-home'>
+            {
+              location.map((item) => (
+                <CardLocation key={item.id} location={item}  />
+              ))
+            }   
+        </div>
+  
+        <h1>Episodes</h1>
+        <div className='episode-home'>
+            {
+              episode.map((item) => (
+                <CardEpisode key={item.id} episode={item} />
+              ))
+            }   
+        </div>
+    </main>
+  )
 }
 
 export default Home

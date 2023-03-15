@@ -22,15 +22,15 @@ const Character = () => {
   }, [])
 
   return (
-    <div className='complete-card'>
+    <div className='character-card'>
       <h1>{character.name}</h1>
       <div className='image'>
         <img src={character.image} alt="character" />
       </div>
       <div className="info">
-        <p style={{backgroundColor: character.status==="Unknown" ? 'gray' : character.status==="Alive" ? 'green' : 'red'}}>Status: {character.status}</p>
-        <p>Gender: {character.gender}</p>
+        <p className='character-status'>Status: {character.status === 'Alive' ? '🟢' + character.status : character.status === 'Dead' ? '🔴' + character.status : '⚫' + character.status}</p>
         <p>Species: {character.species}</p>
+        <p>Gender: {character.gender}</p>
         <p>Origin: {character?.origin?.name}</p>
       </div>
     </div>
