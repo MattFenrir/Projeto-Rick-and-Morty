@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header>
       <div className='img-logo'>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzyP9UVUYIwV296NriZ4WKEi6VFBAVv-CZRoqGH_GUdjq0lIQ&s" alt="logo" />
+        <img src="https://www.freepnglogos.com/uploads/rick-and-morty-png/rick-and-morty-wazzaldorp-deviantart-34.png" alt="logo" />
       </div>
       <div className="search">
         <input type="search" onChange={(e) => setPesquisar(e.target.value)} onKeyDown={(e) => e.key === 'Enter' ? search() : null} value={pesquisar} />

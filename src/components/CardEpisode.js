@@ -8,8 +8,8 @@ const CardEpisode = ({episode}) => {
   }
 
   return (
-    <div className='episode-card' onClick={() => seeMore(episode.id)} >
-        <h3>Name: {episode.name}</h3>
+    <div className='card-episode' onClick={() => seeMore(episode.id)} >
+        <h3>{episode.name}</h3>
         <p>Episode: {episode.episode}</p>
         <p>Air date: {episode.air_date}</p>
     </div>

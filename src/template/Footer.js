@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer>
       <p>
-      - {year.getFullYear()} Mateus
+      ® {year.getFullYear()} Mateus Mainardi
       </p> 
     </footer>
   )

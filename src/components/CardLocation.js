@@ -8,8 +8,8 @@ const CardLocation = ({location}) => {
   }
 
   return (
-    <div classname="location-card" onClick={() => seeMore(location.id)}>
-      <h3>Name: {location.name}</h3>
+    <div classname="card-location" onClick={() => seeMore(location.id)}>
+      <h3>{location.name}</h3>
       <p>Type: {location.type}</p>
       <p>Dimension: {location.dimension}</p>
     </div>

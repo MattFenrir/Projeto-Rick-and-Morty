@@ -12,6 +12,7 @@ import NotFound from './page/NotFound';
 
 // TEMPLATE
 import Header from './template/Header';
+import Footer from './template/Footer';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/search/:search' element={<Search />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
